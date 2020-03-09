@@ -1,5 +1,5 @@
 ## **VUE ROUTER**
->本文主要以图文的模式描述Vue-router的相关性质以及应用方法的知识。git-commit
+>本文主要以图文的模式描述Vue-router的相关性质以及应用方法的知识。
 
 Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建**单页面**应用变得易如反掌。
 
