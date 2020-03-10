@@ -104,9 +104,26 @@ Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度�
 	- 配置路由的格式： /router，也就是普通配置
 	- 传递的方式。对象中使用query的key作为传递方式
 	- 传递后形成的路径: /router?id=123,/router?id=abc
+	
+			<router-link :to="{path:'/profile',query:{name:'hahaha',age:18}}">profile</router-link> 
+	
+- 通过函数传参
+
+![](pic/pic3.png)
+
+- 获取参数
+
+		{{$route.query.name}}
+    	{{$route.query.age}}
+		{{$route.params.userId}}
+
+##$router和$route的区别
+router为VueRouter实例，想要导航到不同的URL，则使用$router.push方法
+
+route为当前router跳转对象里面可以获取name,path,query,params等
 
 
-
- 
+##导航守卫
+（暂放）
 
 	
