@@ -124,6 +124,36 @@ route为当前router跳转对象里面可以获取name,path,query,params等
 
 
 ##导航守卫
-（暂放）
+（以后用到了再补充）
 
+##钩子函数+keep-alive
+
+- 生命周期如下图
+ 
+![](pic/gouzi.png)
+
+
+- 利用钩子函数和keep-alive保存子组件状态
 	
+ 	- 实现上面的导航栏跳转到其他后，回到new还能保存消息组件渲染的状态
+	
+	![](pic/ziluyouSave.jpg)
+	
+
+	- 实现方法
+		- App.vue 增加 <keep-alive><router-view/></keep-alive> 
+	
+		- new组件添加两个钩子函数，分别实现在路由跳转之前保存当前的路由状态和在返回此组件（被激活）的时候重新跳转到刚才保存的路由状态
+		
+ 
+				 activated(){
+			       console.log("activated"+this.path);
+			       this.$router.push(this.path);
+				 },
+					
+				
+		        beforeRouteLeave(to, from, next){
+		            console.log("beforeRouteLeave"+this.$route.path);
+		            this.path=this.$route.path;
+		            next();
+		        }
